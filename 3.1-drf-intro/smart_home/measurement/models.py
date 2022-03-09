@@ -21,7 +21,8 @@ class Measurment(models.Model):
         Sensors, on_delete=models.CASCADE, verbose_name='ID датчика', related_name='measurements')
     temperature = models.DecimalField(
         max_digits=3, decimal_places=1, verbose_name='Температура')
-    date = models.DateTimeField(auto_now=True, verbose_name='Дата измерения')
+    date = models.DateTimeField(auto_now=True, verbose_name='Дата измерения', null=True)
+    image = models.ImageField(blank=True, verbose_name='Картинка')
 
     class Meta:
         verbose_name = 'Замер температуры'
